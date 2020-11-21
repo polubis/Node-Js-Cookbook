@@ -31,6 +31,8 @@ fs.readdir(folderPath, (err, files) => {
 });
 ```
 
+Explain reactor pattern in Node JS
+
 Did you head about Lock on Write behaviour in MongoDb
 
 Which type of communications can you use to create real time behaviour in Node Js app
