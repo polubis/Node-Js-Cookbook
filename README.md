@@ -12,6 +12,68 @@ Describe typical structure in Node JS
 
 . Exmaples of async functions in node js
 
+```js
+// File 1
+var i = 0;
+
+// File 2
+console.log(i) -> value
+```
+
+```js
+a = 1;
+var b = 2;
+cFunc = function(e) {
+  var c = 10;
+  var d = 15;
+  console.log(c);
+  console.log(a); 
+  function dFunc() {
+    var f = 5;
+    console.log(f)
+    console.log(c);
+    console.log(a); 
+  }
+  dFunc();
+}
+cFunc(10);
+```
+
+```js
+function changeStuff(a, b, c)
+{
+  a = a * 10;
+  b.item = "changed";
+  c = {item: "changed"};
+}
+
+var num = 10; // 10
+var obj1 = {item: "unchanged"}; 
+var obj2 = {item: "unchanged"}; 
+
+changeStuff(num, obj1, obj2);
+
+console.log(num); // 10
+console.log(obj1.item); // changed
+console.log(obj2.item); // unchanged
+```
+
+```js
+var Frodo = new Hobbit();
+Frodo.height = 100;
+Frodo.weight = 300;
+console.log(Frodo); // Output: ReferenceError: Hobbit is not defined
+class Hobbit {
+  constructor(height, weight) {
+    this.height = height;
+    this.weight = weight;
+  }
+}
+```
+
+Masz nastepujaca sytuacje:
+
+
 What are LTS releases of Node.js?
 
 LTS stands Long Term Support version of Node.js that receives all the critical bug fixes along with security updates and performance improvements. These versions are supported for at least 18 months and mainly focus on stability and security
@@ -31,7 +93,19 @@ fs.readdir(folderPath, (err, files) => {
 });
 ```
 
+Implementujesz komunikacje w czasie rzeczywistym pomiedzy uzytkownikami. Jakiej technologi bys uzyl ? Jakich wzorcow projektowych ?
+
+- uzytkownicy moga pisac do siebie,
+- wiadomosci sa trzymane w bazie,
+- system pilnuje kolejnosci,
+- system wykonuje walidacje - tylko konkretni uzytkownicy moga pisac do siebie,
+- skalowalnosc
+
+Masz fragment legacy kodu w aplikacji - jest on uzywany w wielu plikach. Jednak chcialbys przepisac krok po kroku ten modul poniewaz jest on zle napisany. Jak bys do tego podszedl ?
+
 Explain reactor pattern in Node JS
+
+W jak sposob znalezc wycieki pamieci w Node
 
 Did you head about Lock on Write behaviour in MongoDb
 
