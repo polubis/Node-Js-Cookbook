@@ -58,6 +58,20 @@ console.log(obj1.item); // changed
 console.log(obj2.item); // unchanged
 ```
 
+```ts
+interface Cloneable<T> {
+    clone(): T;
+}
+
+interface User {
+    name: string;
+}
+
+class UserModel implements Cloneable<UserModel> {
+    data: User;
+}
+```
+
 ```js
 var Frodo = new Hobbit();
 Frodo.height = 100;
@@ -73,6 +87,16 @@ class Hobbit {
 
 Masz nastepujaca sytuacje:
 
+```js
+class User {
+    constructor() {}
+}
+
+class AuthService {
+    private _status: boolean;
+}
+
+```
 
 What are LTS releases of Node.js?
 
